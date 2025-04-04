@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - Gender Inequality Awareness</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <section class="statistics" data-aos="fade-up">
+        
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="equality.jpg" alt="Logo">
+            <h1>Gender Equality Now</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="statistics.html" class="active">Statistics</a></li>
+                <li><a href="initiatives.html">Initiatives</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="challenges.html">Challenges</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="statistics" data-aos="fade-up">
+            <h2>Gender Inequality Statistics</h2>
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <p class="stat-item">Women earn 23% less than men globally on average.</p>
+            <p class="stat-item">Only 25% of managerial roles are held by women.</p>
+            <p class="stat-item">Gender-based violence affects 1 in 3 women worldwide.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Gender Equality Now. All rights reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init();
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar', // Type of chart
+            data: {
+                labels: ['Wage Gap', 'Managerial Roles', 'Violence Against Women'],
+                datasets: [{
+                    label: 'Gender Inequality Statistics',
+                    data: [23, 25, 33], // Percentage data
+                    backgroundColor: ['#ffeb3b', '#1a73e8', '#e91e63'],
+                    borderColor: ['#ffeb3b', '#1a73e8', '#e91e63'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Finance Manager</title>
+    <link rel="icon" href="savings.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('background.jpg'); background-size: cover; background-position: center; background-attachment: fixed;"></body>
+    <div class="container">
+        <header>
+            <h1>Pocket Finance Manager</h1>
+        </header>
+
+        
+        <!-- Sign Up / Log In Section -->
+        <section class="auth-section">
+            <h2>Welcome! Please Sign In or Sign Up</h2>
+            <div class="auth-forms">
+                <form id="sign-up-form">
+                    <h3>Sign Up</h3>
+                    <label for="sign-up-email">Email:</label>
+                    <input type="email" id="sign-up-email" placeholder="Enter your email" required>
+                    <label for="sign-up-password">Password:</label>
+                    <input type="password" id="sign-up-password" placeholder="Create a password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+
+                <form id="login-form">
+                    <h3>Log In</h3>
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                    <button type="submit">Log In</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Connect to Banking App Section -->
+        <section class="bank-link-section">
+            <h2>Link Your Bank Account 💳</h2>
+            <p>Connect to your banking app to receive notifications about overspending and manage your finances better.</p>
+            <button id="link-bank-button">Link Bank Account</button>
+        </section>
+
+        <!-- Savings Goal Section -->
+        <section class="savings-goal">
+            <h2>Set Your Savings Goal  🏦</h2>
+            <form id="savings-form">
+                <label for="goal-name">Goal Name:</label>
+                <input type="text" id="goal-name" placeholder="e.g., Vacation Fund">
+                <label for="goal-amount">Goal Amount:</label>
+                <input type="number" id="goal-amount" placeholder="e.g., 5000">
+                <label for="goal-deadline">Deadline (in months):</label>
+                <input type="number" id="goal-deadline" placeholder="e.g., 6">
+                <button type="submit">Save Goal</button>
+            </form>
+            <div id="goal-result"></div>
+        </section>
+
+        <section class="income-tracker">
+            <h2>Track Your Income 💰</h2>
+            <form id="income-form">
+                <label for="income-source">Income Source:</label>
+                <input type="text" id="income-source" placeholder="e.g., Salary">
+                <label for="income-amount">Amount:</label>
+                <input type="number" id="income-amount" placeholder="e.g., 5000">
+                <button type="submit">Add Income</button>
+            </form>
+            <div id="income-summary"></div>
+        </section>
+        
+
+        <!-- Expense Categorization -->
+        <section class="expense-categorization">
+            <h2>Track Your Expenses 💸</h2>
+            <form id="expense-form">
+                <label for="expense-name">Expense Name:</label>
+                <input type="text" id="expense-name" placeholder="e.g., Rent">
+                <label for="expense-amount">Amount:</label>
+                <input type="number" id="expense-amount" placeholder="e.g., 1500">
+                <label for="expense-category">Category:</label>
+                <select id="expense-category">
+                    <option value="Groceries">Groceries 🍞</option>
+                    <option value="Rent">Rent  🏠</option>
+                    <option value="Entertainment">Entertainment  🎮</option>
+                    <option value="Transportation">Transportation  🚗</option>
+                    <option value="Education">Education 🏫</option>
+                </select>
+                <button type="submit">Add Expense</button>
+            </form>
+            <div id="expense-list"></div>
+        </section>
+
+        <section class="expense-comparison">
+            <h2>Compare Your Expenses 📊</h2>
+            <form id="comparison-form">
+                <label for="compare-category">Select Category:</label>
+                <select id="compare-category">
+                    <option value="Groceries">Groceries 🍞</option>
+                    <option value="Rent">Rent 🏠</option>
+                    <option value="Entertainment">Entertainment 🎮</option>
+                    <option value="Transportation">Transportation 🚗</option>
+                    <option value="Education">Education 🏫</option>
+                </select>
+                <label for="compare-month">Select Month:</label>
+                <input type="month" id="compare-month">
+                <button type="submit">Compare</button>
+            </form>
+            <div id="comparison-result"></div>
+        </section>
+        
+
+        <!-- Debt Tracker -->
+        <section class="debt-tracker">
+            <h2>Track Your Debts  🏦</h2>
+            <form id="debt-form">
+                <label for="debt-name">Debt Name:</label>
+                <input type="text" id="debt-name" placeholder="e.g., Car Loan">
+                <label for="debt-amount">Amount Owed:</label>
+                <input type="number" id="debt-amount" placeholder="e.g., 10000">
+                <button type="submit">Add Debt</button>
+            </form>
+            <div id="debt-list"></div>
+        </section>
+
+        <section class="debt-repayment">
+            <h2>Debt Repayment Plan 💳</h2>
+            <form id="debt-form">
+                <label for="debt-name">Debt Name:</label>
+                <input type="text" id="debt-name" placeholder="e.g., Credit Card">
+                <label for="debt-amount">Amount Owed:</label>
+                <input type="number" id="debt-amount" placeholder="e.g., 2000">
+                <label for="debt-interest">Interest Rate (%)</label>
+                <input type="number" id="debt-interest" placeholder="e.g., 10">
+                <button type="submit">Add Debt</button>
+            </form>
+            <div id="debt-list"></div>
+        </section>
+        
+
+        <!-- Budget Planner -->
+        <section class="budget-planner">
+            <h2>Set Your Monthly Budget  💰</h2>
+            <form id="budget-form">
+                <label for="budget-category">Category:</label>
+                <select id="budget-category">
+                    <option value="Groceries">Groceries  🍞</option>
+                    <option value="Rent">Rent  🏠</option>
+                    <option value="Entertainment">Entertainment  🎮</option>
+                    <option value="Transportation">Transportation  🚗</option>
+                    <option value="Education">Education 🏫</option>
+                </select>
+                <label for="budget-amount">Amount:</label>
+                <input type="number" id="budget-amount" placeholder="e.g., 1000">
+                <button type="submit">Set Budget</button>
+            </form>
+            <div id="budget-list"></div>
+        </section>
+
+        <section class="savings-progress">
+            <h2>Track Your Savings Progress 📈</h2>
+            <p>Goal Amount: R5000</p>
+            <progress id="savings-progress-bar" value="0" max="5000"></progress>
+            <p id="savings-progress-status">You have saved R0 of your R5000 goal.</p>
+        </section>
+        
+
+        <!-- Financial Health Score -->
+        <section class="financial-health">
+            <h2>Your Financial Health Score ❤️</h2>
+            <form id="health-form">
+                <label for="income">Income:</label>
+                <input type="number" id="income" placeholder="e.g., 5000">
+                <label for="debts">Total Debts:</label>
+                <input type="number" id="debts" placeholder="e.g., 2000">
+                <button type="submit">Calculate Score</button>
+            </form>
+            <div id="health-result"></div>
+        </section>
+
+        <!-- Financial Health Status -->
+<section class="financial-status">
+    <h2>Your Financial Status</h2>
+    <div id="financial-status">
+    </div>
+</section>
+
+        <!-- Notifications for Overspending -->
+        <section class="overspending-notification">
+            <h2>Notifications ⚠️</h2>
+            <p id="overspending-alert">No overspending detected.</p>
+        </section>
+    </div>
+
+    <section class="savings-tips">
+        <h2>Tips for Saving 💡</h2>
+        <p id="savings-tip">Consider automating your savings by setting up automatic transfers to your savings account every time you get paid. This ensures you save without even thinking about it</p>
+    </section>
+    
+
+    <script src="script.js"></script>
+    
+    <footer>
+        <p>&copy; 2025 Pocket Finance Manager | All Rights Reserved</p>
+        <div class="footer-links">
+            <a href="privacy-policy.html" target="_blank">Privacy Policy</a> | 
+            <a href="terms-of-service.html" target="_blank">Terms of Service</a>
+        </div>
+    </footer>
+
+</body>
+</html>

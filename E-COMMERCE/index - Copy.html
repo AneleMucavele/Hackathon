@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUDEES HAIR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo1.jpeg" alt="Hair Business Logo">
+        </div>
+        <div class="caption">
+            <marquee behavior="scroll" direction="left">Crowning You with Elegance - Where Luxury Meets Your Style! Shop now!</marquee>
+        </div>
+        <div class="cart">
+            <button onclick="viewCart()">🛒 View Cart</button>
+        </div>
+        
+    </header>
+
+    <!-- Product Display Section -->
+    <section class="products">
+        <h2><b>OUR COLLECTION</b></h2>
+        <div class="product-item">
+            <img src="Bob1.jpg" alt="Bob wig" >
+            <h3>12 inch DD Peruvian 13 * 4 </h3>
+            <p>Price: R1 800</p>
+            <button onclick="addToCart('12 inches Peruvian', 300)">Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+            <img src="Long1.jpg" alt="Long wig">
+            <h3>18 inch Peruvian 13 * 4</h3>
+            <p>Price: R2 750</p>
+            <button onclick="addToCart('18 inches peruvian', 250)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="jerry2.jpg" alt="curly wig">
+            <h3>18 inch Malaysian Curls 13 * 4</h3>
+            <p>Price: R2 900</p>
+            <button onclick="addToCart('18 inches malaysian curls', 250)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="curlpony2.jpg" alt="curly wig">
+            <h3>16 inch Jerry curls 13 * 4</h3>
+            <p>Price: R2 750</p>
+            <button onclick="addToCart('16 inches Jerry curls', 250)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="jerrywet1.jpg" alt="curly wig">
+            <h3>14 inch Malaysian Curls 13 * 4</h3>
+            <p>Price: R2 200</p>
+            <button onclick="addToCart('14 inches malaysian curls', 250)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="colorbob1.jpg" alt="bob wig">
+            <h3>12 inch DD Peruvian 13 * 4 color</h3>
+            <p>Price: R2 050</p>
+            <button onclick="addToCart('12 inches peruvian', 250)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="14inch1.jpg" alt="Long wig">
+            <h3>14 inch Peruvian 13 * 4</h3>
+            <p>Price: R2 000</p>
+            <button onclick="addToCart('14 inches peruvian', 250)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="Short3.jpg" alt="bob wig">
+            <h3>8 inch DD Peruvian 13 * 4</h3>
+            <p>Price: R1 400</p>
+            <button onclick="addToCart('8 inches peruvian', 250)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="4x4curl2.jpg" alt="curly wig">
+            <h3>18 inch Jerry Curls 4 * 4</h3>
+            <p>Price: R2 750</p>
+            <button onclick="addToCart('18 inches Jerry curls', 250)">Add to Cart</button>
+        </div>
+    </section>
+
+     <!-- Services Section -->
+     <section class="services">
+        <h2>Services We Offer</h2>
+        <ul>
+            <li>Treatment and Wash - R250 <button>Book Now</button></li>
+            <li>Wig Making - R350 <button>Book Now</button></li>
+            <li>Bleaching - R300 <button>Book Now</button></li>
+        </ul>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2>Products For Sale</h2>
+        <div class="product-combo">
+            <h3>Combo 1 - R500</h3>
+            <p>Hot Comb, Glamour Spray, Olive Oil Mousse, Wax Stick, Ghost bond glue, Band and caps, Glue remover</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-combo">
+            <h3>Combo 2 - R550</h3>
+            <p>Straightning Brush Comb, Wig Stand, Glamour Spray, Olive Oil Mousse, Band and Caps, Glue Remover</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-combo">
+            <h3>Combo 3 - R700</h3>
+            <p>3 in 1 Hot Brush, Wig Stand, Glamour Spray, Olive Oil Mousse, Band and Caps, Glue Remover</p>
+            <button>Add to Cart</button>
+        </div>
+    </section>
+
+
+    <!-- Cart Section -->
+    <section id="cart-section" class="cart-section" style="display: none;">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="total-price">Total: $0</p>
+        <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout-section" class="checkout-section" style="display: none;">
+        <h2>Checkout</h2>
+        <form id="payment-form">
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method">
+                <option value="credit">Credit Card</option>
+                <option value="payflex">Debit</option>
+                <option value="payflex">Payflex</option>
+                <option value="payflex">PayJustNow</option>
+
+            </select>
+            <input type="submit" value="Pay Now">
+        </form>
+    </section>
+
+     <!-- Payment Methods Section -->
+     <section class="payment-methods">
+        <h2>Payment Methods</h2>
+        <p>Select your preferred payment method:</p>
+        <button>Credit Card</button>
+        <button>Payflex</button>
+        <button>Link Banking App</button>
+    </section>
+
+    <!-- Authentication Section -->
+    <section class="auth-section">
+        <h2>User Authentication</h2>
+        <button onclick="location.href='login.html'">Login</button>
+        <button onclick="location.href='signup.html'">Sign Up</button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Oudees Hair. All Rights Reserved</p>
+        <p>Follow us on: 
+            <a href="Oudees.Hair">Instagram</a> | 
+            <a href="Oudees.Hair">Facebook</a> | 
+            <a href="Oudees.Hair">TikTok</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
